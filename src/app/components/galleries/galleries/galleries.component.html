@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="grid-12 grid-centered ">
+    <h1><span class="fa fa-caret-right"></span>  {{title}} </h1>
+    <h5> {{description}} </h5>
+    <app-gallery-search *ngIf="galleries.length" [galleries]="galleries" (searchValue)="setSearchValue($event)"></app-gallery-search>
+    <button class="button button-small" (click)="exportGalleries()">Export galleries</button>
+    <button class="button button-small" (click)="removeGalleries()">Remove galleries</button>
+    <p *ngIf="galleries">Ilosc elementow :{{(galleries | searchGalleries : searchValue).length}} </p>
+
+    <div class="row row-align-middle"  *ngIf="galleries.length">
+      <app-gallery-item
+          *ngFor="let item of galleries | searchGalleries : searchValue; trackBy:item?.id"
+          [gallery]="item"
+          (deleteGallery)="removeGallery($event)"
+          class="grid-5 grid-centered">
+
+      </app-gallery-item>
+    </div>
+  </div>
+</div>
+sp

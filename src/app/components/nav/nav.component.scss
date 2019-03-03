@@ -1,0 +1,40 @@
+@import "../../../assets/styles/variables";
+
+:host {
+  display: block;
+  width: 100%;
+  background: $dark-gray;
+  color: #fff;
+  line-height: 40px;
+  border-bottom: 1px solid #0000;
+
+  .container{
+    padding-bottom: 0;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+
+    &.brand-logo {
+      font-size: $font-size-h2;
+    }
+  }
+
+  ul {
+    float: right;
+
+    li {
+      display: inline-block;
+      line-height: $font-size-h2;
+
+      a{
+        display: block;
+        padding: 4px 10px;
+        &.is-active {
+          color: $brand-success;
+        }
+      }
+    }
+  }
+}
+

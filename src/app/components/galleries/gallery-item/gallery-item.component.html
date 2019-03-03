@@ -1,0 +1,12 @@
+<div class="component-content">
+  <h4>{{gallery.title}}</h4>
+  <p><small>{{gallery.dateCreated | polishDate | uppercase}}</small></p>
+  <div class="thumb-container">
+    <a routerLink="/galleries/{{gallery.galleryId}}" class="thumb-container">
+      <img src="{{gallery.thumbUrl}}">
+    </a>
+    <a (click)="onDelete(gallery.galleryId)">Delete
+    </a>
+  </div>
+  <p class="description">{{gallery.description}}</p>
+</div>

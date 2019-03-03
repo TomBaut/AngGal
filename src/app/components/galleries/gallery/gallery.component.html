@@ -1,0 +1,32 @@
+<h2>Galeria: {{gallery.title}}
+    <p><small>{{gallery.dateCreated | polishDate | uppercase}}</small></p>
+    <br><small>galleryId: {{gallery.galleryId}}</small>
+    <p>des: {{gallery.description}}</p>
+   <img src="{{gallery.thumbUrl}}">
+
+
+    <div>
+        <span *ngFor="let tag of gallery.tags">
+            {{tag.tag}}
+        </span>
+
+    </div>
+
+
+
+    <li *ngFor="let thumbUrl of gallery.photos" >
+
+        <img [src]="thumbUrl.thumbUrl"/>
+
+    </li>
+
+
+
+
+
+
+
+
+
+
+</h2>
